@@ -22,6 +22,22 @@
   color: #61dafb;
 }
 
+.App-api-button {
+  border: 1px solid #66dbfd;
+  border-radius: 20px;
+  background-color: transparent;
+  color: #66dbfd;
+  width: 300px;
+  height: 40px;
+  font-size: 16px;
+  transition: all ease 0.3s;
+}
+
+.App-api-button:hover {
+  background-color: #66dbfd;
+  color: white
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

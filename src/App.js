@@ -3,22 +3,44 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    fetch('/api')
+      .then(response => response.json())
+      .then(({ server }) => this.setState({ server }))
+      .catch(console.err);
+  }
+
+  state = {
+    server: '',
+    quote: ''
+  }
+
+  callAPI = () => {
+    fetch(`${this.state.server}/quote/random`)
+      .then(response => response.json())
+      .then(({ quote }) => this.setState({ quote }))
+      .catch(() => {
+        this.setState({
+          quote: '(╯°□°）╯︵ ┻━┻ Something go wrong ... sorry'
+        });
+      });
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            Welcome to the CI/CD training
+            You are connected to: { this.state.server }
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <p>
+            { this.state.quote }
+          </p>
+          <button className="App-api-button" onClick={this.callAPI}>Say me something</button>
         </header>
       </div>
     );
