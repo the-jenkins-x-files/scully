@@ -22,7 +22,6 @@ It's a React application that provides a (very) basic UI with one page.
 
 **Running**:
 
-Either:
 - build the project with `npm run build`
 - and serve your files with `node server.js`
 
@@ -30,7 +29,8 @@ Either:
 
 When your running `node server.js`, you can add an env variables
 
-- `SERVER` (string): host:port on which to listen. Default: `http://locahost:8080`
+- `SERVER` (string): host:port of the mulder instance. Default: `http://127.0.0.1:8080`
+- `PORT` (string): node server port. Default: `3000`
 
 For example
 

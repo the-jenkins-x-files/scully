@@ -1,15 +1,24 @@
 const express = require('express');
-const app = express();
+const proxy = require('http-proxy-middleware')
 const path = require('path');
+
+const app = express();
 const port = process.env.PORT || 3000;
+const api = process.env.SERVER || 'http://127.0.0.1:8080';
 
 //Static file declaration
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('/api', (req, res) => {
-    res.json({
-        server: process.env.SERVER || 'http://localhost:8080'
-    });
+var apiProxy = proxy('/api/**', { 
+    target: api,
+    pathRewrite: {
+    '^/api/': '/'
+    }
+});
+app.use(apiProxy)
+
+app.get('/quote/random', (req, res) => {
+    res.json({ quote: 'test' });
 });
 
 //build mode
