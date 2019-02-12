@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import bulle from './bulle.png';
+import dana from './dana.png';
 import './App.css';
 
 class App extends Component {
   state = {
-    server: '',
-    quote: ''
+    quote: '...'
   }
 
   callAPI = () => {
@@ -22,15 +22,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>
+          The Jenkins X Files
+        </h1>
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <div className="dana-say">
+            <img src={bulle} onClick={this.callAPI} className="App-bulle" alt="logo" />
+            <img src={dana} className="App-logo" alt="logo" />
+          </div>
           <p>
-            Welcome to the CI/CD training
+            Mulder says: { this.state.quote }
           </p>
-          <p>
-            { this.state.quote }
-          </p>
-          <button className="App-api-button" onClick={this.callAPI}>Say me something</button>
         </header>
       </div>
     );
