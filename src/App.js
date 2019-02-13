@@ -14,7 +14,7 @@ class App extends Component {
       .then(({ quote }) => this.setState({ quote }))
       .catch(() => {
         this.setState({
-          quote: '(╯°□°）╯︵ ┻━┻ Something go wrong ... sorry'
+          quote: '(╯°□°）╯︵ ┻━┻ Something went wrong while contacting Mulder...'
         });
       });
   }
