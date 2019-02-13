@@ -11,7 +11,7 @@ class App extends Component {
   callAPI = () => {
     fetch(`api/quote/random`)
       .then(response => response.json())
-      .then(({ quote }) => this.setState({ quote }))
+      .then(({ quote }) => this.setState({ quote: `Mulder says: ${quote}` }))
       .catch(() => {
         this.setState({
           quote: '(╯°□°）╯︵ ┻━┻ Something went wrong while contacting Mulder...'
@@ -31,7 +31,7 @@ class App extends Component {
             <img src={dana} className="App-logo" alt="logo" />
           </div>
           <p>
-            Mulder says: { this.state.quote }
+            { this.state.quote }
           </p>
         </header>
       </div>
