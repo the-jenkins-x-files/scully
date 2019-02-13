@@ -12,26 +12,34 @@ It's a React application that provides a (very) basic UI with one page.
 
 - [Mulder](https://github.com/the-jenkins-x-files/mulder) - to store the quotes
 
-**Dev env**:
+## Commands
+
+### Install dependencies
 
 - `npm install`
+
+### Dev env
+
 - `npm start`
 
-**Building**:
+When your running `npm start`, you can add an env variables
 
-- `npm install`
+- `SERVER` (string): url of the mulder instance. Default: `http://127.0.0.1:8080`
+
+### Building
+
 - `npm run build`
 
-**Running**:
+### Running
 
-- build the project with `npm install` & `npm run build`
+- build the project with `npm run build`
 - and serve your files with `node server.js`
 
 **Env variables**:
 
 When your running `node server.js`, you can add an env variables
 
-- `SERVER` (string): host:port of the mulder instance. Default: `http://127.0.0.1:8080`
+- `SERVER` (string): url of the mulder instance. Default: `http://127.0.0.1:8080`
 - `PORT` (string): node server port. Default: `3000`
 
 For example
@@ -40,9 +48,25 @@ For example
 SERVER=http://mulderscully.com node server.js
 ```
 
-**Unit Tests**:
+### Unit Tests
 
 - `npm test`
+
+### E2E Tests
+
+- `npm e2e`
+
+**Env variables**:
+
+When your running `npm e2e`, you can add an env variables
+
+- `UI` (string): url of the scully instance. Default: `http://127.0.0.1:3000`
+
+For example
+
+```
+UI=http://127.0.0.1:8000/ npm run e2e
+```
 
 ## Thanks
 

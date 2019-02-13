@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const ui = process.env.UI || 'http://127.0.0.1';
+const ui = process.env.UI || 'http://127.0.0.1:3000';
 
 it('h1 loads correctly', async () => {
     const browser = await puppeteer.launch();

@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 var apiProxy = proxy('/api/**', { 
     target: api,
     pathRewrite: {
-    '^/api/': '/'
+      '^/api/': '/'
     }
 });
 app.use(apiProxy)
