@@ -20,9 +20,9 @@ It's a React application that provides a (very) basic UI with one page.
 
 ### Dev env
 
-- `npm start`
+- `npm run dev`
 
-When your running `npm start`, you can add an env variables
+When your running `npm run dev`, you can add an env variables
 
 - `SERVER` (string): url of the mulder instance. Default: `http://127.0.0.1:8080`
 
@@ -32,12 +32,11 @@ When your running `npm start`, you can add an env variables
 
 ### Running
 
-- build the project with `npm run build`
-- and serve your files with `node server.js`
+- `npm start`
 
 **Env variables**:
 
-When your running `node server.js`, you can add an env variables
+When your running `npm start`, you can add an env variables
 
 - `SERVER` (string): url of the mulder instance. Default: `http://127.0.0.1:8080`
 - `PORT` (string): node server port. Default: `3000`
