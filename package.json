@@ -58,7 +58,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "BABEL_ENV='test' NODE_ENV='test' jest"
+    "test": "BABEL_ENV='test' NODE_ENV='test' jest ./src/*.test.js",
+    "e2e": "jest ./e2e/*.spec.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -80,7 +81,8 @@
     ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
-      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
+      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,ts,tsx}",
+      "<rootDir>/e2e/**/?(*.)(spec|test).{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jsdom",
     "testURL": "http://localhost",
@@ -94,7 +96,6 @@
       "^.+\\.module\\.(css|sass|scss)$"
     ],
     "moduleNameMapper": {
-      "^react-native$": "react-native-web",
       "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
     },
     "moduleFileExtensions": [
@@ -114,5 +115,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "puppeteer": "^1.12.2"
   }
 }

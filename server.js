@@ -17,10 +17,6 @@ var apiProxy = proxy('/api/**', {
 });
 app.use(apiProxy)
 
-app.get('/quote/random', (req, res) => {
-    res.json({ quote: 'test' });
-});
-
 //build mode
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build/index.html'));
