@@ -14,15 +14,17 @@ It's a React application that provides a (very) basic UI with one page.
 
 **Dev env**:
 
+- `npm install`
 - `npm start`
 
 **Building**:
 
+- `npm install`
 - `npm run build`
 
 **Running**:
 
-- build the project with `npm run build`
+- build the project with `npm install` & `npm run build`
 - and serve your files with `node server.js`
 
 **Env variables**:
