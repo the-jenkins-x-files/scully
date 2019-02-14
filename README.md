@@ -53,11 +53,11 @@ SERVER=http://mulderscully.com node server.js
 
 ### E2E Tests
 
-- `npm e2e`
+- `npm run e2e`
 
 **Env variables**:
 
-When your running `npm e2e`, you can add an env variables
+When your running `npm run e2e`, you can add an env variables
 
 - `UI` (string): url of the scully instance. Default: `http://127.0.0.1:3000`
 
