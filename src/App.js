@@ -30,7 +30,7 @@ class App extends Component {
             <img src={bulle} onClick={this.callAPI} className="App-bulle" alt="logo" />
             <img src={dana} className="App-logo" alt="logo" />
           </div>
-          <p>
+          <p className="App-quote">
             { this.state.quote }
           </p>
         </header>
