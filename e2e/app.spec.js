@@ -4,12 +4,14 @@ const ui = process.env.UI || 'http://127.0.0.1:3000';
 describe("App test", () => {
     let browser;
 
-    beforeAll(async () => {
-        browser = await puppeteer.launch({
+    beforeAll(() => {
+        return puppeteer.launch({
             args: [
                 '--no-sandbox',
                 '--disable-setuid-sandbox'
             ]
+        }).then(browserPromise => {
+            browser = browserPromise;
         });
     });
 
