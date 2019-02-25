@@ -4,16 +4,15 @@ const ui = process.env.UI || 'http://127.0.0.1:3000';
 describe("App test", () => {
     let browser;
 
-    beforeAll(() => {
-        return puppeteer.launch({
+    beforeAll(async () => {
+        browser = await puppeteer.launch({
+            timeout: 30000,
             args: [
                 '--no-sandbox',
                 '--disable-setuid-sandbox'
             ]
-        }).then(browserPromise => {
-            browser = browserPromise;
         });
-    });
+    }, 30000);
 
     it('h1 loads correctly', async () => {
         const page = await browser.newPage();
