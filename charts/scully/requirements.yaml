@@ -1,4 +1,4 @@
 dependencies:
 - name: mulder
-  repository: the-jenkins-x-files/mulder
+  repository: https://the-jenkins-x-files.github.io/charts
   version: 1.0.0
