@@ -30,6 +30,7 @@ pipeline {
             sh "make preview"
             sh "jx preview --app $APP_NAME --dir ../.."
           }
+          sh "UI=http://scully.$PREVIEW_NAMESPACE/ npm run e2e"
         }
       }
     }
