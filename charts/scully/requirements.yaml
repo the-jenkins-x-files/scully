@@ -1,0 +1,4 @@
+dependencies:
+- name: mulder
+  repository: the-jenkins-x-files/mulder
+  version: 1.0.0
