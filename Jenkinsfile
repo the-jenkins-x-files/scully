@@ -25,8 +25,9 @@ pipeline {
           sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:$PREVIEW_VERSION"
           dir('./charts/preview') {
             sh "make preview"
-            sh "jx preview --app $APP_NAME --dir ../.."
+            sh "jx preview --app $APP_NAME --namespace $PREVIEW_NAMESPACE --dir ../.."
           }
+          sh "UI=http://scully.$PREVIEW_NAMESPACE/ npm run e2e"
         }
       }
     }
