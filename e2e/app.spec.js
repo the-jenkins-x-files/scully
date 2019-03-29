@@ -19,7 +19,7 @@ describe("App test", () => {
         await page.goto(ui);
         await page.waitFor('.App');
         const html = await page.$eval('.App h1', e => e.innerHTML);
-        expect(html).toBe('The Jenkins X Files version 1.1');
+        expect(html).toBe('The Jenkins X Files');
         page.close();
     }, 16000);
 
